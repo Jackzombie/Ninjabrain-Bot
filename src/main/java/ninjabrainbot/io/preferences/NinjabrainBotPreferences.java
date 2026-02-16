@@ -78,6 +78,7 @@ public class NinjabrainBotPreferences {
 	public final MultipleChoicePreference<DefaultBoatType> defaultBoatType;
 	public final MultipleChoicePreference<AngleAdjustmentType> angleAdjustmentType;
 	public final MultipleChoicePreference<AngleAdjustmentDisplayType> angleAdjustmentDisplayType;
+	public final HotkeyPreference hotkeyUpdateOverlay; //test this
 
 	public NinjabrainBotPreferences(IPreferenceSource source) {
 		this.source = source;
@@ -98,6 +99,7 @@ public class NinjabrainBotPreferences {
 		hotkeyBoat = new HotkeyPreference("hotkey_boat", source);
 		hotkeyMod360 = new HotkeyPreference("hotkey_mod_360", source);
 		hotkeyToggleAllAdvancementsMode = new HotkeyPreference("hotkey_toggle_aa_mode", source);
+		hotkeyUpdateOverlay = new HotkeyPreference("hotkey_update_overlay", source);//test
 		// Float
 		sensitivityManual = new FloatPreference("sensitivity_manual", 0.4341732f, 0f, 1f, source);
 		sigma = new FloatPreference("sigma", 0.1f, 0.001f, 1f, source);
