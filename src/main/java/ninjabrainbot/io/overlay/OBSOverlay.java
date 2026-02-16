@@ -37,6 +37,7 @@ public class OBSOverlay implements IDisposable {
 		lastOverlayUpdate = System.currentTimeMillis() - minOverlayUpdateDelayMillis;
 
 		disposeHandler.add(domainModel.whenModified().subscribeEDT(this::markShouldUpdate));
+		disposeHandler.add(preferences.hotkeyUpdateOverlay.whenTriggered().subscribe(__ -> markShouldUpdate()));//test
 		createClearTimer();
 		createUpdateTimer();
 		setupSettingsSubscriptions();
